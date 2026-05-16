@@ -1,0 +1,39 @@
+# SmartNotes LLM Notebook — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core ML / Model ──────────────────────────────────────────────────────────
+torch>=2.2.0
+transformers>=4.47.0
+accelerate>=0.30.0
+torchvision
+torchaudio
+
+# ── Audio Processing ─────────────────────────────────────────────────────────
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# ── Video / Image Processing ──────────────────────────────────────────────────
+opencv-python>=4.9.0
+Pillow>=10.0.0
+
+# ── PDF Generation & Reading ──────────────────────────────────────────────────
+reportlab>=4.0.0
+PyMuPDF>=1.24.0          # PDF text extraction (fitz) — required for --pdf-input
+
+# ── Plotting / Diagram Rendering ─────────────────────────────────────────────
+matplotlib>=3.8.0
+numpy>=1.26.0
+
+# ── Configuration ─────────────────────────────────────────────────────────────
+PyYAML>=6.0.0
+
+# ── Streamlit Web UI (optional — required only for app.py) ───────────────────
+streamlit>=1.35.0
+
+# ── YouTube Download (optional, needed for YouTube URL input) ─────────────────
+yt-dlp>=2024.1.0
+
+# ── System dependency (install separately, NOT via pip) ───────────────────────
+# ffmpeg  →  sudo apt install ffmpeg          (Ubuntu/Debian)
+#            brew install ffmpeg              (macOS)
+#            https://ffmpeg.org/download.html (Windows)

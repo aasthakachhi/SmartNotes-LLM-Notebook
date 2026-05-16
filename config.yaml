@@ -1,0 +1,42 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# SmartNotes LLM Notebook — Configuration File
+# Edit values here; all modules read from this file via config_loader.py logic
+# embedded in constants.py.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Model ────────────────────────────────────────────────────────────────────
+model:
+  id: "google/gemma-4-E2B-it"
+
+# ── Video / Frame Sampling ───────────────────────────────────────────────────
+video:
+  frame_every_n_sec: 5          # Sample one frame every N seconds
+  diagram_dpi: 150              # DPI for rendered diagram images
+  diagram_max_width_cm: 14      # Max width of diagrams in the PDF
+
+# ── Audio ────────────────────────────────────────────────────────────────────
+audio:
+  sample_rate: 16000            # Hz — must match model expectation
+  max_duration_sec: 30         # Truncate audio chunks to this length
+
+# ── Deduplication & Quality ──────────────────────────────────────────────────
+quality:
+  dup_threshold: 0.80           # Similarity threshold to skip duplicate frames
+  max_retries: 2                # Max QA retry attempts for notes generation
+  qa_min_words: 30              # Minimum word count per required section
+
+# ── Defaults (overridden by CLI flags) ───────────────────────────────────────
+defaults:
+  target_language: "english"    # Default output language
+  output_path: "smart_notes.pdf"
+  domain: null                  # null = auto-detect; set to a domain key to force
+
+# ── Logging ──────────────────────────────────────────────────────────────────
+logging:
+  level: "INFO"                 # DEBUG | INFO | WARNING | ERROR
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+  datefmt: "%H:%M:%S"
+
+# ── Font Cache ───────────────────────────────────────────────────────────────
+fonts:
+  cache_dir: "~/.smart_notes_fonts"   # Directory for downloaded Noto fonts
