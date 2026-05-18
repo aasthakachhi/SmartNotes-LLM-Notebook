@@ -22,7 +22,7 @@ audio:
 # ── Deduplication & Quality ──────────────────────────────────────────────────
 quality:
   dup_threshold: 0.80           # Similarity threshold to skip duplicate frames
-  max_retries: 2                # Max QA retry attempts for notes generation
+  max_retries: 1                # Max QA retry attempts for notes generation
   qa_min_words: 30              # Minimum word count per required section
 
 # ── Defaults (overridden by CLI flags) ───────────────────────────────────────
